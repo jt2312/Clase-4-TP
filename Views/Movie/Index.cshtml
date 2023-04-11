@@ -1,0 +1,16 @@
+@model List<Movie>
+
+<div class="text-center">
+    <h1 class="display-4">Peliculas</h1>
+    <p>Mejores Peliculas de la ultima decada</p>
+</div>
+<ol>
+    @foreach (var item in Model)
+    {
+        <li><a asp-action="Detail" asp-route-id="@item.Code">@item.Name</a></li>
+    }
+</ol>
+
+<button type="button" class="btn btn-warning"><a asp-action="Create">Agregar Pelicula</a></button>
+
+<button type="button" class="btn btn-danger"><a asp-action="Delete">Eliminar Pelicula</a></button>
